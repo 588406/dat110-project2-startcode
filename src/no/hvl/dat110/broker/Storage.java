@@ -98,6 +98,5 @@ public class Storage {
 		subscriptions.get(topic).remove(user);
 		
 		
-		//testtest3423423
 	}
 }
