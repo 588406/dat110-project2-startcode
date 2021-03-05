@@ -96,5 +96,8 @@ public class Storage {
 		// TODO: remove the user as subscriber to the topic
 
 		subscriptions.get(topic).remove(user);
+		
+		
+		//testtest3
 	}
 }
