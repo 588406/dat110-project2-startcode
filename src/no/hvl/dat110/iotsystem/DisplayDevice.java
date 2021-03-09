@@ -32,9 +32,17 @@ public class DisplayDevice {
 		client.subscribe(Common.TEMPTOPIC);
 
 		for (int i = 0; i < COUNT; i++) {
-			client.receive();
+			PublishMsg msg = (PublishMsg) client.receive();
+
+			System.out.println("Temperature is " + msg.getMessage());
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException ex) {
+				ex.printStackTrace();
+			}
+
 		}
-		
+
 		client.unsubscribe(Common.TEMPTOPIC);
 		client.disconnect();
 		System.out.println("Display stopping ... ");

@@ -26,6 +26,11 @@ public class TemperatureDevice {
 
 		for (int i = 0; i < COUNT; i++) {
 			client.publish(Common.TEMPTOPIC, String.valueOf(sn.read()));
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException ex) {
+				ex.printStackTrace();
+			}
 		}
 		client.disconnect();
 		System.out.println("Temperature device stopping ... ");
